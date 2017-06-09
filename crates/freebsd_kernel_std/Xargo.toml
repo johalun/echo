@@ -1,0 +1,5 @@
+# [target.x86_64-kernel-freebsd.dependencies]
+# collections = {}
+
+# [target.x86_64-kernel-freebsd.dependencies.core]
+# features = ["unique"]

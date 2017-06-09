@@ -1,0 +1,22 @@
+[package]
+name    = "std"
+version = "0.1.0"
+authors = ["johalun <johalun0@gmail.com>"]
+
+# Generate bindings for kernel functions
+build = "build.rs"
+
+[dependencies]
+alloc = { path="../liballoc" }
+alloc_system = { path="../liballoc_system" }
+collections = { path="../libcollections" }
+std_unicode = { path = "../libstd_unicode" }
+spin = "*"
+
+# [dependencies.compiler_builtins]
+# git = "https://github.com/rust-lang-nursery/compiler-builtins"
+# features = ["c"]
+
+[build-dependencies]
+bindgen = "*"
+# shlex   = "*"
