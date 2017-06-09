@@ -14,11 +14,6 @@ use spin::{Mutex, MutexGuard, RwLock, RwLockReadGuard, RwLockWriteGuard};
 
 lazy_static! {
     // Object created on first access (which is module load callback)
-    // NOTE: Wrap in Option so that we can take it out and free all memory at unload
-    // (we could instead wrap all member in Option, which is best?)
-
-    // XXX: If Arc<Mutex<Hello>>, anything in Arc<> will be leaked at kldunload!
-
     pub static ref MODULE: kern::SharedModule<Hello> = kern::SharedModule::new(Hello::new());
 }
 
